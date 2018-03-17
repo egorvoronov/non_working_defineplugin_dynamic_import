@@ -2,12 +2,6 @@
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
-/******/ 	// object to store loaded chunks
-/******/ 	// "0" means "already loaded"
-/******/ 	var installedChunks = {
-/******/ 		1: 0
-/******/ 	};
-/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/
@@ -32,21 +26,6 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
-/******/ 	// This file contains only the entry chunk.
-/******/ 	// The chunk loading function for additional chunks
-/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
-/******/ 		// "0" is the signal for "already loaded"
-/******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + chunkId + ".bundle.js");
-/******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
-/******/ 			for(var moduleId in moreModules) {
-/******/ 				modules[moduleId] = moreModules[moduleId];
-/******/ 			}
-/******/ 			for(var i = 0; i < chunkIds.length; i++)
-/******/ 				installedChunks[chunkIds[i]] = 0;
-/******/ 		}
-/******/ 		return Promise.resolve();
-/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -80,13 +59,6 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
-/******/ 	// uncatched error handler for webpack runtime
-/******/ 	__webpack_require__.oe = function(err) {
-/******/ 		process.nextTick(function() {
-/******/ 			throw err; // catch this error by using System.import().catch()
-/******/ 		});
-/******/ 	};
-/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
@@ -100,13 +72,9 @@
 
 console.log('This is index');
 
-if (true) {
-    __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 1)).then(function (module1) {
+if (false) {
+    import('./module1').then(function (module1) {
         return module1();
-    });
-} else {
-    import('./module2').then(function (module2) {
-        return module2();
     });
 }
 
