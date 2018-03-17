@@ -1,1 +1,0 @@
-webpackJsonp([1],[,function(e,o,t){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),o.default=function(){console.log("I am module 1")},e.exports=o.default}]);

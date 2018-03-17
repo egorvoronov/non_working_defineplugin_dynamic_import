@@ -1,1 +1,114 @@
-!function(e){var n=window.webpackJsonp;window.webpackJsonp=function(t,o,u){for(var i,c,l=0,s=[];l<t.length;l++)c=t[l],r[c]&&s.push(r[c][0]),r[c]=0;for(i in o)Object.prototype.hasOwnProperty.call(o,i)&&(e[i]=o[i]);for(n&&n(t,o,u);s.length;)s.shift()()};var t={},r={2:0};function o(n){if(t[n])return t[n].exports;var r=t[n]={i:n,l:!1,exports:{}};return e[n].call(r.exports,r,r.exports,o),r.l=!0,r.exports}o.e=function(e){var n=r[e];if(0===n)return new Promise(function(e){e()});if(n)return n[2];var t=new Promise(function(t,o){n=r[e]=[t,o]});n[2]=t;var u=document.getElementsByTagName("head")[0],i=document.createElement("script");i.type="text/javascript",i.charset="utf-8",i.async=!0,i.timeout=12e4,o.nc&&i.setAttribute("nonce",o.nc),i.src=o.p+""+e+".bundle.js";var c=setTimeout(l,12e4);function l(){i.onerror=i.onload=null,clearTimeout(c);var n=r[e];0!==n&&(n&&n[1](new Error("Loading chunk "+e+" failed.")),r[e]=void 0)}return i.onerror=i.onload=l,u.appendChild(i),t},o.m=e,o.c=t,o.d=function(e,n,t){o.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:t})},o.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return o.d(n,"a",n),n},o.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},o.p="",o.oe=function(e){throw console.error(e),e},o(o.s=3)}([function(e,n){var t,r,o=e.exports={};function u(){throw new Error("setTimeout has not been defined")}function i(){throw new Error("clearTimeout has not been defined")}function c(e){if(t===setTimeout)return setTimeout(e,0);if((t===u||!t)&&setTimeout)return t=setTimeout,setTimeout(e,0);try{return t(e,0)}catch(n){try{return t.call(null,e,0)}catch(n){return t.call(this,e,0)}}}!function(){try{t="function"==typeof setTimeout?setTimeout:u}catch(e){t=u}try{r="function"==typeof clearTimeout?clearTimeout:i}catch(e){r=i}}();var l,s=[],a=!1,f=-1;function d(){a&&l&&(a=!1,l.length?s=l.concat(s):f=-1,s.length&&h())}function h(){if(!a){var e=c(d);a=!0;for(var n=s.length;n;){for(l=s,s=[];++f<n;)l&&l[f].run();f=-1,n=s.length}l=null,a=!1,function(e){if(r===clearTimeout)return clearTimeout(e);if((r===i||!r)&&clearTimeout)return r=clearTimeout,clearTimeout(e);try{r(e)}catch(n){try{return r.call(null,e)}catch(n){return r.call(this,e)}}}(e)}}function p(e,n){this.fun=e,this.array=n}function m(){}o.nextTick=function(e){var n=new Array(arguments.length-1);if(arguments.length>1)for(var t=1;t<arguments.length;t++)n[t-1]=arguments[t];s.push(new p(e,n)),1!==s.length||a||c(h)},p.prototype.run=function(){this.fun.apply(null,this.array)},o.title="browser",o.browser=!0,o.env={},o.argv=[],o.version="",o.versions={},o.on=m,o.addListener=m,o.once=m,o.off=m,o.removeListener=m,o.removeAllListeners=m,o.emit=m,o.prependListener=m,o.prependOnceListener=m,o.listeners=function(e){return[]},o.binding=function(e){throw new Error("process.binding is not supported")},o.cwd=function(){return"/"},o.chdir=function(e){throw new Error("process.chdir is not supported")},o.umask=function(){return 0}},,,function(e,n,t){"use strict";(function(e){var n=i(t(4)),r=i(t(5)),o=i(t(6)),u=i(t(8));i(t(9));function i(e){return e&&e.__esModule?e:{default:e}}console.log("This is index"),(0,o.default)({id:"./module1",file:"/Users/evoronov/WebstormProjects/webpack-lazy-chunks/src/index.js",load:function(){return Promise.all([t.e(1).then(t.bind(null,1)),(0,r.default)("module1",{})]).then(function(e){return e[0]})},path:function(){return n.default.join(e,"./module1")},resolve:function(){return 1},chunkName:function(){return"module1"}}).then(module1),(0,o.default)({id:"./module2",file:"/Users/evoronov/WebstormProjects/webpack-lazy-chunks/src/index.js",load:function(){return Promise.all([t.e(0).then(t.bind(null,2)),(0,r.default)("module2",{})]).then(function(e){return e[0]})},path:function(){return n.default.join(e,"./module2")},resolve:function(){return 2},chunkName:function(){return"module2"}}).then(module2),console.log("isDesktop equals true"),(0,u.default)()}).call(n,"/")},function(e,n,t){(function(e){function t(e,n){for(var t=0,r=e.length-1;r>=0;r--){var o=e[r];"."===o?e.splice(r,1):".."===o?(e.splice(r,1),t++):t&&(e.splice(r,1),t--)}if(n)for(;t--;t)e.unshift("..");return e}var r=/^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/,o=function(e){return r.exec(e).slice(1)};function u(e,n){if(e.filter)return e.filter(n);for(var t=[],r=0;r<e.length;r++)n(e[r],r,e)&&t.push(e[r]);return t}n.resolve=function(){for(var n="",r=!1,o=arguments.length-1;o>=-1&&!r;o--){var i=o>=0?arguments[o]:e.cwd();if("string"!=typeof i)throw new TypeError("Arguments to path.resolve must be strings");i&&(n=i+"/"+n,r="/"===i.charAt(0))}return n=t(u(n.split("/"),function(e){return!!e}),!r).join("/"),(r?"/":"")+n||"."},n.normalize=function(e){var r=n.isAbsolute(e),o="/"===i(e,-1);return(e=t(u(e.split("/"),function(e){return!!e}),!r).join("/"))||r||(e="."),e&&o&&(e+="/"),(r?"/":"")+e},n.isAbsolute=function(e){return"/"===e.charAt(0)},n.join=function(){var e=Array.prototype.slice.call(arguments,0);return n.normalize(u(e,function(e,n){if("string"!=typeof e)throw new TypeError("Arguments to path.join must be strings");return e}).join("/"))},n.relative=function(e,t){function r(e){for(var n=0;n<e.length&&""===e[n];n++);for(var t=e.length-1;t>=0&&""===e[t];t--);return n>t?[]:e.slice(n,t-n+1)}e=n.resolve(e).substr(1),t=n.resolve(t).substr(1);for(var o=r(e.split("/")),u=r(t.split("/")),i=Math.min(o.length,u.length),c=i,l=0;l<i;l++)if(o[l]!==u[l]){c=l;break}var s=[];for(l=c;l<o.length;l++)s.push("..");return(s=s.concat(u.slice(c))).join("/")},n.sep="/",n.delimiter=":",n.dirname=function(e){var n=o(e),t=n[0],r=n[1];return t||r?(r&&(r=r.substr(0,r.length-1)),t+r):"."},n.basename=function(e,n){var t=o(e)[2];return n&&t.substr(-1*n.length)===n&&(t=t.substr(0,t.length-n.length)),t},n.extname=function(e){return o(e)[3]};var i="b"==="ab".substr(-1)?function(e,n,t){return e.substr(n,t)}:function(e,n,t){return n<0&&(n=e.length+n),e.substr(n,t)}}).call(n,t(0))},function(e,n,t){(function(n){var t={};e.exports=function(e,r){var o=r||{},u=function(e){return"undefined"!=typeof window&&window.__CSS_CHUNKS__?window.__CSS_CHUNKS__[e]:null}(e);if(u){if(!0===t[u])return Promise.resolve();t[u]=!0;var i=document.getElementsByTagName("head")[0],c=document.createElement("link");return c.charset="utf-8",c.type="text/css",c.rel="stylesheet",c.timeout=3e4,new Promise(function(n,t){var r,o,l=function(){o&&(c.href=u,o.onerror=null),c.onerror=null,clearTimeout(r),n()};c.onerror=function(){c.onerror=c.onload=null,clearTimeout(r),t(new Error("could not load css chunk: "+e))},function(){var e=navigator.userAgent.match(/\ AppleWebKit\/(\d+)\.(\d+)/);if(e){var n=+e[1],t=+e[2];return 535===n&&t>=24||n>535}return!0}()&&"onload"in c?(c.onload=l,c.href=u):((o=document.createElement("img")).onerror=l,o.src=u),r=setTimeout(c.onerror,c.timeout),i.appendChild(c)})}if("development"===n.env.NODE_ENV&&!o.disableWarnings){if("undefined"==typeof window||!window.__CSS_CHUNKS__)return void console.warn('[UNIVERSAL-IMPORT] no css chunks hash found at "window.__CSS_CHUNKS__". Make sure you are using: https://www.npmjs.com/package/extract-css-chunks-webpack-plugin . If you are not serving CSS, disregard this message.');console.warn("[UNIVERSAL-IMPORT] no chunk, ",e,', found in "window.__CSS_CHUNKS__". If you are not serving CSS for this chunk, disregard this message.')}}}).call(n,t(0))},function(e,n,t){(function(e){e.exports=function(e,n){if(!1===n)return e;var t=e.load;return e.then=function(e){return t().then(function(n){return e&&e(n)})},e.catch=function(e){return t().catch(function(n){return e&&e(n)})},e};var n=!1;!function(){if(!n){var r,o=void 0!==t;try{(r=o?t(10):e.require("react-universal-component"))&&(r.setHasBabelPlugin(),n=!0)}catch(e){}}}()}).call(n,t(7)(e))},function(e,n){e.exports=function(e){return e.webpackPolyfill||(e.deprecate=function(){},e.paths=[],e.children||(e.children=[]),Object.defineProperty(e,"loaded",{enumerable:!0,get:function(){return e.l}}),Object.defineProperty(e,"id",{enumerable:!0,get:function(){return e.i}}),e.webpackPolyfill=1),e}},function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.default=function(){console.log("I am module 3")},e.exports=n.default},function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.default=function(){console.log("I am Lazy Component internal code")},e.exports=n.default}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded chunks
+/******/ 	// "0" means "already loaded"
+/******/ 	var installedChunks = {
+/******/ 		1: 0
+/******/ 	};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		// "0" is the signal for "already loaded"
+/******/ 		if(installedChunks[chunkId] !== 0) {
+/******/ 			var chunk = require("./" + chunkId + ".bundle.js");
+/******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
+/******/ 			for(var moduleId in moreModules) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 			for(var i = 0; i < chunkIds.length; i++)
+/******/ 				installedChunks[chunkIds[i]] = 0;
+/******/ 		}
+/******/ 		return Promise.resolve();
+/******/ 	};
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// uncatched error handler for webpack runtime
+/******/ 	__webpack_require__.oe = function(err) {
+/******/ 		process.nextTick(function() {
+/******/ 			throw err; // catch this error by using System.import().catch()
+/******/ 		});
+/******/ 	};
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+console.log('This is index');
+
+if (true) {
+    __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 1)).then(function (module1) {
+        return module1();
+    });
+} else {
+    import('./module2').then(function (module2) {
+        return module2();
+    });
+}
+
+/***/ })
+/******/ ]);

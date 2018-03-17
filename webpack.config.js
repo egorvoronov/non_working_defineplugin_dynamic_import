@@ -5,6 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const webpackConfig = {
     devtool: false,
+    target: 'node',
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
@@ -28,7 +29,7 @@ const webpackConfig = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            isDesktop: true,
+            __IS_SERVER__: true,
         }),
         new HtmlWebpackPlugin()
     ]

@@ -1,1 +1,21 @@
-webpackJsonp([0],{2:function(e,o,t){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),o.default=function(){console.log("I am module 2")},e.exports=o.default}});
+exports.ids = [0];
+exports.modules = [
+/* 0 */,
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function () {
+    console.log('I am module 1');
+};
+
+module.exports = exports['default'];
+
+/***/ })
+];;

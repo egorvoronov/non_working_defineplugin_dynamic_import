@@ -5,11 +5,22 @@
     "stage-0"
   ],
   "env": {
+    "development": {
+      "plugins": [
+        "add-module-exports",
+        [
+          "transform-runtime",
+          {
+            "helpers": true,
+            "polyfill": false,
+            "regenerator": true
+          }
+        ]
+      ]
+    },
     "production": {
       "plugins": [
-        "syntax-dynamic-import",
         "add-module-exports",
-        "universal-import",
         [
           "transform-runtime",
           {
