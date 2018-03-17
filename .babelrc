@@ -1,0 +1,24 @@
+{
+  "presets": [
+    "env",
+    "react",
+    "stage-0"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "syntax-dynamic-import",
+        "add-module-exports",
+        "universal-import",
+        [
+          "transform-runtime",
+          {
+            "helpers": true,
+            "polyfill": false,
+            "regenerator": true
+          }
+        ]
+      ]
+    }
+  }
+}
